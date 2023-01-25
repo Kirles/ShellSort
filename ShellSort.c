@@ -52,9 +52,9 @@ void CompareToOther(){
 	int* arr;
 	int* sequence;
 	double executionTime;
-	char fileName[3][30] = {{"src/RandInput.txt"},
-	 	 	 	 	 	 	{"src/PartSortedInput.txt"},
-	 	 	 	 	 	 	{"src/SortedInput.txt"}};
+	char fileName[3][30] = {{"RandInput.txt"},
+	 	 	 	 	 	 	{"PartSortedInput.txt"},
+	 	 	 	 	 	 	{"SortedInput.txt"}};
 	char* type_of_sort[3] = {"Random array", "Particullary Sorted Array", "Sorted Array"};
 	time_t start, end;
 	arr = (int*)malloc(N * sizeof(int));
@@ -128,7 +128,7 @@ void CompareToOther(){
 		executionTime = difftime(end, start) / 1000;
 		printf("Merge Sort execution Time: %.3lf\n", executionTime);
 		
-	 	//pyramidsort 
+	 	    //pyramidsort
 		Read(arr, fileName[i]);
 		start = clock();
 		PyramidSort(N, arr); 
@@ -230,8 +230,7 @@ void SequenceTest(){
 	time_t start, end;
 	int* tempsequence;
 	int* arr;
-	int* sequences[6]; 
- 	 
+	int* sequences[6];
  	arr = (int*)malloc(N * sizeof(int));
 	if(arr == NULL){
 		printf("Allocation memory error\n"); 
@@ -269,21 +268,21 @@ void SequenceTest(){
 	 	 	 	printf("Fibonacci Sequnce\n"); 
 	 	 	 	break; 
 	 	}
- 	 	Read(arr, "src/RandInput.txt");
+ 	 	Read(arr, "RandInput.txt");
 		start = clock();
 		ShellSort(N, arr, sequences[i]);
 		end = clock();
 		executionTime = difftime(end, start) / 1000; 
  	 	printf("Random array\n");
 		printf("Execution Time: %.3lf\n", executionTime);
- 	 	Read(arr, "src/PartSortedInput.txt");
+ 	 	Read(arr, "PartSortedInput.txt");
 		start = clock();
 		ShellSort(N, arr, sequences[i]);
 		end = clock();
 		executionTime = difftime(end, start) / 1000;
 		printf("Particullary sorted array\n");
 		printf("Execution Time: %.3lf\n", executionTime);
- 	 	Read(arr, "src/SortedInput.txt");
+ 	 	Read(arr, "SortedInput.txt");
 		start = clock();
 		ShellSort(N, arr, sequences[i]);
 		end = clock();
@@ -438,7 +437,7 @@ int* FibonacciSequence(int size){
 
 void RandGen(){
 	int i; 
- 	FILE* f = fopen("src/RandInput.txt", "w");
+ 	FILE* f = fopen("RandInput.txt", "w");
 	for(i = 0; i < N; i++){
 		fprintf(f, "%d ", rand()%N); 
 	} 
@@ -447,7 +446,7 @@ void RandGen(){
 
 void PartSortedGen(){ 
 	int i;
-	FILE* fp = fopen("src/PartSortedInput.txt", "w");
+	FILE* fp = fopen("PartSortedInput.txt", "w");
 	for(i = 0; i < N / 2; i++){
 		fprintf(fp, "%d ", i);
 	} 
@@ -459,7 +458,7 @@ void PartSortedGen(){
 
 void SortedGen(){ 
 	int i; 
- 	FILE* fp = fopen("src/SortedInput.txt", "w");
+ 	FILE* fp = fopen("SortedInput.txt", "w");
 	for(i = 0; i < N; i++){
 		fprintf(fp, "%d ", i); 
 	} 
